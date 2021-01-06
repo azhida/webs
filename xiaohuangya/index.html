@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>让你开心是我一生的骄傲</title>
+
+    <link rel="stylesheet" href="" />
+
+</head>
+
+<body>
+
+<img id="1" src="./images/1.gif" alt="">
+<img id="2" src="./images/2.gif" alt="">
+<img id="3" src="./images/3.gif" alt="">
+<img id="4" src="./images/4.gif" alt="">
+<img id="5" src="./images/5.gif" alt="">
+
+</body>
+
+<script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+
+    var current_num = 14;
+
+    $(function () {
+
+        setInterval(function () {
+
+            fnSetImgSrc();
+
+        }, 3000)
+
+    })
+
+    function fnSetImgSrc() {
+
+        if (current_num == 14) {
+            current_num = 1;
+        } else {
+            current_num++;
+        }
+
+        var current_num_1 = current_num;
+        var current_num_2 = current_num + 1;
+        var current_num_3 = current_num + 2;
+        var current_num_4 = current_num + 3;
+        var current_num_5 = current_num + 4;
+        if (current_num_2 > 14) current_num_2-=14;
+        if (current_num_3 > 14) current_num_3-=14;
+        if (current_num_4 > 14) current_num_4-=14;
+        if (current_num_5 > 14) current_num_5-=14;
+
+        $('img[id=1]').attr('src', './images/' + current_num_1 + '.gif');
+        $('img[id=2]').attr('src', './images/' + current_num_2 + '.gif');
+        $('img[id=3]').attr('src', './images/' + current_num_3 + '.gif');
+        $('img[id=4]').attr('src', './images/' + current_num_4 + '.gif');
+        $('img[id=5]').attr('src', './images/' + current_num_5 + '.gif');
+
+    }
+</script>
+</html>
