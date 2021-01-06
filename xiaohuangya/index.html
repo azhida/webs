@@ -23,15 +23,42 @@
 
     var current_num = 14;
 
+    var first_num = 1;
+    var last_num = 5;
+
     $(function () {
 
         setInterval(function () {
 
-            fnSetImgSrc();
+            // fnSetImgSrc();
+
+            fnAddLastImg();
 
         }, 3000)
 
-    })
+    });
+
+    function fnAddLastImg() {
+
+        if (last_num == 14) {
+            last_num = 1;
+        } else {
+            last_num++;
+        }
+
+        console.log(first_num)
+        console.log(last_num)
+
+        $('img[id=' + first_num + ']').remove();
+        $('body').append('<img id="' + last_num + '" src="./images/' + last_num + '.gif" alt="">');
+
+        if (first_num == 14) {
+            first_num = 1;
+        } else {
+            first_num++;
+        }
+
+    }
 
     function fnSetImgSrc() {
 
