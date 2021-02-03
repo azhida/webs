@@ -1,77 +1,105 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover" name="viewport" />
-    <title>分享海报</title>
-    <style>
-        html,body{
-            margin: 0;
-            padding: 0;
-        }
-
-        #capture{
-            padding: 2vw;
-            background: #f5da55;
-            width: 100vw;
-            text-align: center;
-        }
-
-        #qrcodeCanvas img{
-            margin: auto;
-        }
-
-        #button{
-
-            width: 80vw;
-            margin: 2vw auto;
-            padding: 5vw 0;
-            text-align: center;
-            background-color: #ff0000;
-            border-radius: 2vw;
-
-        }
-    </style>
-</head>
-<body>
-
-<div id="capture">
-    <h4 style="color: #000; ">欢迎访问</h4>
-    <h5 style="color: blue; ">开心最美丽</h5>
-
-    <div id="qrcodeCanvas"></div>
-</div>
-
-<div id="button" onclick="convert()">
-    生成海报
-</div>
-
-<script type="text/javascript" src="../js/qrcode.min.js"></script>
-<script type="text/javascript" src="../js/html2canvas.min.js"></script>
-<script type="text/javascript">
-
-    //生成二维码
-    var qrcode = new QRCode(document.getElementById("qrcodeCanvas"), {
-        text: 'http://....',
-        width: 146,
-        height: 146,
-        colorDark: '#000000',
-        colorLight: '#ffffff',
-        correctLevel: QRCode.CorrectLevel.H
-    });
-
-
-    //开始转换
-    function convert() {
-        // html2canvas(document.body).then(canvas => {
-        //     document.body.appendChild(canvas)
-        // });
-
-        html2canvas(document.querySelector("#capture")).then(canvas => {
-            document.body.appendChild(canvas)
-        });
-
-    }
-</script>
-</body>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content=" user-scalable=no" />
+         <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <title></title>
+        <link rel="stylesheet" href="css/index.css">
+        <script>
+            var _hmt = _hmt || [];
+            (function() {
+                var hm = document.createElement("script");
+                hm.src = "https://hm.baidu.com/hm.js?e918dd735536116b8042a9d0459d8c38";
+                var s = document.getElementsByTagName("script")[0]; 
+                s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+    </head>
+    <body>
+         <div id="container">
+            <audio id="No1Audio" src="video/bg.mp3" autoplay></audio>
+             <div id="No1">
+                 <img class="No1Bg" src="images/img1/bg1.png">
+                 <div class="No1Font">
+                    <div>
+                        <img class="No1FontImg1" src="images/img1/font1.png">
+                    </div>
+                    <div>
+                        <img class="No1FontImg2" src="images/img1/font2.png">
+                    </div>
+                    <div>
+                        <img class="No1FontImg3" src="images/img1/font3.png">
+                    </div>
+                    <div>
+                        <img class="No1FontImg4" src="images/img1/font4.png">
+                    </div>
+                    <div>
+                        <img class="No1FontImg5" src="images/img1/font5.png">
+                    </div>
+                    <div>
+                        <img class="No1FontImg6" src="images/img1/font6.png">
+                    </div>
+                    <div>
+                        <img class="No1FontImg7" src="images/img1/font7.png">
+                    </div>
+                    <div>
+                        <img class="No1FontImg8" src="images/img1/font8.png">
+                    </div>
+                    <div>
+                        <img class="No1FontImg9" src="images/img1/font9.png">
+                    </div>
+                    <div>
+                        <img class="No1FontImg10" src="images/img1/font10.png">
+                    </div>
+                 </div>
+                 <div  class="No1Btn">
+                     <img src="images/img1/btn1_1.png">
+                 </div>
+             </div>
+             <div id="No2">
+                <div class="No2Top"></div>
+                <img class="topImg" src="images/img2/No2Top.png">
+                <img class="No2Load" src="images/img2/Load.png">
+                <div id="No2Bg">
+                    <canvas id="myCanvas"></canvas>
+                    <img id="upImg" class="No2Buttom" src="" id="img"/>
+                    <input style="display:none;" id="fileBtn" multiple type="file" accept="image/*"  />
+                </div>
+                <div class="No2Font1"><img id="f1" src="images/img2/top.png"></div>
+                <div class="No2Font2"><img id="f2" src="images/img2/cont.png"></div>
+                <div class="No2Font3"><img id="f3" src="images/img2/buttom.png"></div>
+                <div class="No2Font4">
+                    <img class="fontH" src="images/img2/H.png">
+                    <img id="f4" class="fontHs" src="images/img2/1.png">
+                </div>
+                <div class="No2Btn1"><img src="images/img2/btn2_1.png"></div>
+                <div class="No2Btn2"><img src="images/img2/btn2_2.png"></div>
+                <div class="No2Btn3"><img src="images/img2/btn2_3.png"></div>
+                <div class="No2Em1"><img id="em" src="images/img2/em.png"></div>
+             </div>
+             <div class="No3Tops">
+                 <img class="No3Load" src="images/img3/load.png">
+             </div>
+             <div id="No3">
+                <canvas id="No3Canvas"></canvas>
+                <div class="No3Top"></div> 
+                <img class="No3Fen" src="images/img3/fen.png">
+                <div class="No3Border">
+                    
+                </div>
+                <div class="No3buttom">
+                    <img class="No3Save"src="images/img3/save.png">
+                    <img class="No3Share" src="images/img3/shareBtn.png">
+                </div>
+             </div> 
+         </div> 
+    </body>
+    <script src="js/jquery_3.3.1.js"></script>
+   <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+  <script src="js/exif.js"></script>
+    <script src="js/touch.js"></script>
+    <script src="js/pointer.js"></script>
+    <script src="js/index.js"></script>
 </html>

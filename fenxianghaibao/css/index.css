@@ -1,0 +1,266 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#container{
+    width: 100%;
+    position: relative;
+}
+/* No1页 */
+#No1{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 300;
+    overflow: hidden;
+    /* 测试属性 */
+    /* display: none; */
+}
+.No1Bg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 300;
+}
+.No1Font{
+    width: 100%;
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    z-index: 301;
+}
+.No1Font>div>img{
+    display: none;
+    width: 50%;
+}
+.No1Btn{
+    width: 20%;
+    position: absolute;
+    left: 40%;
+    bottom: 10%;
+    z-index: 333;
+    display: none;
+}
+.No1Btn>img{
+    width: 100%;
+}
+/* No2页 */
+#No2{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 200;
+    overflow: hidden;
+    background: #FDC9D3;
+    display: none;
+}
+#No2>.No2Font1>img,
+#No2>.No2Font2>img,
+#No2>.No2Font3>img,
+#No2>.No2Font4>img,
+#No2>.No2Btn1>img,
+#No2>.No2Btn2>img,
+#No2>.No2Btn3>img,
+#No2>.No2Em1>img{
+    width: 100%;
+}
+.No2Top{
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    opacity: 0.7;
+    position: absolute;
+    z-index: 251;
+}
+.topImg{
+    position: absolute;
+    width: 60%;
+    top: -30%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 252;
+}
+.No2Load{
+    position: absolute;
+    width: 20%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 253;
+    display: none
+}
+.No2Font1{
+    width: 50%;
+    position: absolute;
+    top:2%;
+    right:10%;
+    z-index: 201;
+}
+.No2Font2{
+    width: 25%;
+    padding: 5%;
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    z-index: 202;
+    background-image: url("../images/img2/topK.png");
+    background-size: 100% 100%;
+}
+.No2Font3{
+    width: 50%;
+    position: absolute;
+    left: 25%;
+    bottom: 2%;
+    z-index: 203;
+}
+.No2Font4{
+    width: 75%;
+    padding: 5%;
+    position: absolute;
+    left: 5%;
+    top: 75%;
+    z-index: 204;
+    background-image: url("../images/img2/buttomK.png");
+    background-size: 100% 100%;
+}
+#No2>.No2Font4>.fontH{
+    width: 10%;
+    position: absolute;
+    top: -20%;
+    left: -5%;
+}
+.No2Btn1{
+    width: 20%;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    z-index: 205;
+}
+.No2Btn2{
+    width: 15%;
+    position: absolute;
+    top: 7%;
+    right: 10%;
+    z-index: 206;
+    display: none;
+}
+.No2Btn3{
+    width: 15%;
+    position: absolute;
+    top:18%;
+    right: 10%;
+    z-index: 207;
+    display: none;
+}
+.No2Em1{
+    width: 15%;
+    position: absolute;
+    top:88%;
+    left: 80%;
+    z-index: 208;
+    display: none;
+}
+/* 可上传背景图 */
+#No2Bg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 200;
+    overflow: hidden;
+}
+.No2Buttom{
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+
+}
+#myCanvas{
+    position: absolute;
+    display: none;
+}
+#No3{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 100;
+    top:0;
+    overflow: hidden;
+    display: none;
+}
+.No3Tops{
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    opacity: 0.7;
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+    display: none;
+}
+.No3Load{
+    position: absolute;
+    width: 20%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 1001;
+    /* display: none */
+}
+#No3Canvas{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    z-index: -100;
+}
+.No3Border{
+    width: 100%;
+    height: 100%;
+    padding: 0%;
+    margin: auto;
+    overflow: hidden;
+}
+.No3Border>img{
+    width: 100%;
+    height: 100%;
+}
+.No3buttom{
+    width: 75%;
+    height: 10%;
+    margin: auto;
+    display: none;
+    margin-top:5% 
+}
+.No3Save{
+    width: 40%;
+    float: left;
+    margin: 10px;
+}
+.No3Share{
+    width: 30%;
+    float: right;
+    margin: 5px;
+}
+.No3Fen{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+    z-index: 10001;
+}
+.No3Top{
+    width:  100%;
+    height: 100%;
+    position: absolute;
+    z-index: 10000;
+    background: #000;
+    top:0;
+    opacity: 0.8;
+    display: none
+}
