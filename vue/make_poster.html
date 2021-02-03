@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover" name="viewport" />
+    <title>制作海报</title>
+    <style type="text/css">
+        *{margin: 0;padding: 0;}
+        img{
+            width: 100%;
+        }
+    </style>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <!--一键复制 js-->
+</head>
+<body>
+<!--字体设置-->
+<script type="text/javascript">
+    // “()()”表示自执行函数
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+            // 手机旋转事件,大部分手机浏览器都支持 onorientationchange 如果不支持，可以使用原始的 resize
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                //clientWidth: 获取对象可见内容的宽度，不包括滚动条，不包括边框
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 10*(clientWidth / 320) + 'px';
+            };
+
+        recalc();
+        //判断是否支持监听事件 ，不支持则停止
+        if (!doc.addEventListener) return;
+        //注册翻转事件
+        win.addEventListener(resizeEvt, recalc, false);
+
+    })(document, window);
+</script>
+<div class="qrcodeContent">
+    <!--二维码-->
+    <div class="qrcodeCanvas" style="width: 51%;margin: 0 auto;height: 80vh;">
+        <img class="imgBox" src="images/test.png" style="display: none;width: 100%;height: 100%;"/>
+        <img class="imgCode" src="images/mycode.png" style="display: none;width: 5.5rem;height: 5.5rem;"/>
+        <div id="qrcodeCanvas"></div>
+    </div>
+    <!--一键复制-->
+    <div class="share">
+        <p>长按上图保存图片</p>
+        <p>或</p>
+        <button class="copyBtn" data-clipboard-text="">复制分享链接</button>
+        <p>将图片或者链接分享给您的好友</p>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    $(function() {
+        //生成画布
+        hecheng();
+        function hecheng(){
+            draw(function(){
+                document.getElementById('qrcodeCanvas').innerHTML='<img src="'+base64[0]+'">';
+            })
+        }
+        var base64=[];
+        function draw(fn) {
+            var imgArr = ['images/test.png','images/mycode.png'];
+            var c = document.createElement('canvas'),
+                ctx = c.getContext('2d'),
+                len = imgArr.length;
+            c.width = $(".qrcodeCanvas").width();
+            c.height = $(".qrcodeCanvas").height();
+            console.log(c.width,c.height);
+            ctx.rect(0,0,c.width,c.height);
+            ctx.fillStyle='#ccc';
+            ctx.fill();
+            function drawing(n) {
+                if (n<len) {
+                    var img = new Image;
+                    img.src = imgArr[n];
+                    img.onload = function() {
+                        if (n==1) {
+                            var codeW = $(".imgCode").width(), codeH = $(".imgCode").height();
+                            ctx.drawImage(img,94,125,codeW,codeH);
+                            drawing(n+1);
+                        } else {
+                            ctx.drawImage(img,0,0,c.width,c.height);
+                            drawing(n+1);
+                        }
+                    }
+                } else {
+                    base64.push(c.toDataURL("image/jpeg",0.8));
+                    fn();
+                }
+            }
+            drawing(0);
+        }
+    })
+</script>
+</html>
