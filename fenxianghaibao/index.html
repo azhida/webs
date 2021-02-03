@@ -17,6 +17,10 @@
             text-align: center;
         }
 
+        #qrcodeCanvas img{
+            margin: auto;
+        }
+
         #button{
 
             width: 80vw;
@@ -35,14 +39,28 @@
     <h4 style="color: #000; ">欢迎访问</h4>
     <h5 style="color: blue; ">开心最美丽</h5>
 
+    <div id="qrcodeCanvas"></div>
 </div>
 
 <div id="button" onclick="convert()">
     生成海报
 </div>
 
+<script type="text/javascript" src="../js/qrcode.min.js"></script>
 <script type="text/javascript" src="../js/html2canvas.min.js"></script>
 <script type="text/javascript">
+
+    //生成二维码
+    var qrcode = new QRCode(document.getElementById("qrcodeCanvas"), {
+        text: 'http://....',
+        width: 146,
+        height: 146,
+        colorDark: '#000000',
+        colorLight: '#ffffff',
+        correctLevel: QRCode.CorrectLevel.H
+    });
+
+
     //开始转换
     function convert() {
         // html2canvas(document.body).then(canvas => {
@@ -52,6 +70,7 @@
         html2canvas(document.querySelector("#capture")).then(canvas => {
             document.body.appendChild(canvas)
         });
+
     }
 </script>
 </body>
