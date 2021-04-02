@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover" name="viewport" />
+    <title>分享海报</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+
+        #capture{
+            padding: 2vw;
+            background: #f5da55;
+            width: 100vw;
+            text-align: center;
+        }
+
+        #qrcodeCanvas img{
+            margin: auto;
+        }
+
+        #button{
+
+            width: 80vw;
+            margin: 2vw auto;
+            padding: 5vw 0;
+            text-align: center;
+            background-color: #ff0000;
+            border-radius: 2vw;
+
+        }
+    </style>
+</head>
+<body>
+
+<div id="capture">
+    <h4 style="color: #000; ">欢迎访问</h4>
+    <h5 style="color: blue; ">开心最美丽</h5>
+
+    <div id="qrcodeCanvas"></div>
+</div>
+
+<div id="button" onclick="convert()">
+    生成海报
+</div>
+
+<script type="text/javascript" src="../js/qrcode.min.js"></script>
+<script type="text/javascript" src="../js/html2canvas.min.js"></script>
+<script type="text/javascript">
+
+    //生成二维码
+    var qrcode = new QRCode(document.getElementById("qrcodeCanvas"), {
+        text: '谁看谁美丽，哈哈哈哈哈',
+        width: 146,
+        height: 146,
+        colorDark: '#000000',
+        colorLight: '#ffffff',
+        correctLevel: QRCode.CorrectLevel.H
+    });
+
+
+    //开始转换
+    function convert() {
+        // html2canvas(document.body).then(canvas => {
+        //     document.body.appendChild(canvas)
+        // });
+
+        html2canvas(document.querySelector("#capture")).then(canvas => {
+            document.body.appendChild(canvas)
+        });
+
+    }
+</script>
+</body>
+</html>
