@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$Title$</title>
+    <style>
+        html, body{
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin:0;
+            overflow: hidden;
+            font-family: Helvetica;
+        }
+        #tree{
+            width:100%;
+            height:100%;
+        }
+    </style>
+    <script src="../../js/jquery-3.5.1.min.js"></script>
+    <script src="../../js/orgchart.js"></script>
+</head>
+<body>
+
+<div id="tree"/>
+
+</body>
+
+<script>
+
+    var chart = new OrgChart(document.getElementById("tree"), {
+        mouseScrool: OrgChart.action.none,
+        enableDragDrop: true,
+        nodeBinding: {
+            field_0: "name",
+            field_1: "title",
+            img_0: "img"
+        },
+        nodes: [
+            { id: "1", tags: ["Management"], name: "Amber McKenzie", title: "CEO", img: "https://cdn.balkan.app/shared/1.jpg" },
+            { id: "2", pid: "1", tags: ["IT Manager"], name: "Ava Field", title: "IT Manager", img: "https://cdn.balkan.app/shared/2.jpg" },
+            { id: "3", pid: "1", tags: ["Marketing Manager"], name: "Rhys Harper", title: "Marketing Team Lead", img: "https://cdn.balkan.app/shared/3.jpg" },
+            { id: "4", pid: "2", tags: ["IT"], name: "Carol Foster", title: "Junior Developer", img: "https://cdn.balkan.app/shared/4.jpg" },
+            { id: "5", pid: "2", tags: ["IT"], name: "Blake Morris", title: "Senior Developer", img: "https://cdn.balkan.app/shared/5.jpg" },
+            { id: "6", pid: "3", tags: ["Marketing"], name: "Erin Grant", title: "Junior Marketing", img: "https://cdn.balkan.app/shared/6.jpg" },
+            { id: "7", pid: "3", tags: ["Marketing"], name: "Avery Hughes", title: "Senior MArketing", img: "https://cdn.balkan.app/shared/7.jpg" }
+        ]
+    });
+
+</script>
+
+</html>
