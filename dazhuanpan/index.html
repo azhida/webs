@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="translated-ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>h5移动端幸运大转盘抽奖代码示例</title>
+
+    <link rel="stylesheet" href="css/GB-canvas-turntable.css">
+    <link rel="stylesheet" type="text/css" href="css/hlhs.css">
+
+    <link type="text/css" rel="stylesheet" charset="UTF-8" href="https://translate.googleapis.com/translate_static/css/translateelement.css">
+</head>
+<body>
+
+<img class="bg" src="bg.png" alt="">
+
+<div class="zhuanp">
+    <section id="turntable" class="gb-turntable">
+        <div class="gb-turntable-container" style="transform: rotate(3735deg);">
+            <canvas class="gb-turntable-canvas" width="300" height="300px"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">抱歉！浏览器不支持。</font></font></canvas>
+            <ul class="gb-turntalbe-list"><li class="gb-turntable-item"> <span style="transform: rotate(0turn)"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1元红包</font></font></span> </li><li class="gb-turntable-item"> <span style="transform: rotate(0.125turn)"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2元红包</font></font></span> </li><li class="gb-turntable-item"> <span style="transform: rotate(0.25turn)"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">100元红包</font></font></span> </li><li class="gb-turntable-item"> <span style="transform: rotate(0.375turn)"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3元红包</font></font></span> </li><li class="gb-turntable-item"> <span style="transform: rotate(0.5turn)"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">显示器</font></font></span> </li><li class="gb-turntable-item"> <span style="transform: rotate(0.625turn)"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5元红包</font></font></span> </li><li class="gb-turntable-item"> <span style="transform: rotate(0.75turn)"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6元红包</font></font></span> </li><li class="gb-turntable-item"> <span style="transform: rotate(0.875turn)"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">笔记本电脑</font></font></span> </li></ul></div>
+
+        <a class="gb-turntable-btn" href="javascript:;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">抽奖</font></font></a>
+    </section>
+</div>
+
+<script src="js/GB-canvas-turntable.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        gbTurntable.init({
+            id: 'turntable',
+            config: function (callback) {
+                // 获取奖品信息
+                // callback && callback(['11元红包','2元红包','3元红包','4元红包','5元红包','6元红包']);
+                callback && callback([
+                    {
+                        text: '1元红包',
+                    }, {
+                        text: '2元红包'
+                    }, {
+                        text: '100元红包'
+                    }, {
+                        text: '3元红包'
+                    }, {
+                        text: '显示器',
+                    }, {
+                        text: '5元红包'
+                    }, {
+                        text: '6元红包'
+                    }, {
+                        text: '笔记本电脑'
+                    }
+                ])
+            },
+            getPrize: function (callback) {
+                // 获取中奖信息
+                var num = Math.random() * 7 >>> 0, //奖品ID
+                    chances = num; // 可抽奖次数
+                callback && callback([num, chances]);
+            },
+            gotBack: function (data) {
+                alert('恭喜抽中' + data);
+            }
+        });
+    }, false);
+
+</script><div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="https://www.gstatic.com/images/branding/product/1x/translate_24dp.png" width="20" height="20" alt="Google 翻译"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">原文</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">提供更好的翻译建议</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div>
+
+
+<div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div></body></html>
